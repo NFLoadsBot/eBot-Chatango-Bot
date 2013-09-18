@@ -42,10 +42,19 @@ class TestBot(ch.RoomManager):
         cmd, args = data[0], ""
 
 
-#commands
+#commands section
 
       if cmd == "test":
-          room.message("Test Worked")
+        room.message("Test Worked")
+        
+      elif cmd == "slap":
+        if not args == "":
+          if args in owners:
+            room.message("No! I wont slap my owner!")
+          else:
+            room.message("*slaps "+args+"*")
+        else:
+          room.message("Who do I slap? O.o")
 
 
 
